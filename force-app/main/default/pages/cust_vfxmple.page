@@ -1,0 +1,29 @@
+<apex:page standardController="Account" sidebar="false">
+    
+    <apex:form >
+        <script>
+        function getfilter()
+        {
+            if(Account.rating=='cold')
+            {
+                var bool=true;
+            	return bool;
+            }    
+            
+        }
+        </script>
+        <apex:pageBlock title="Customer Details">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="edit" action="{!edit}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>   
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!Account.name}"/>
+                <apex:inputField value="{!Account.rating}" />
+                <apex:inputField value="{!Account.phone}" rendered="getfilter()"  />
+                <apex:inputField value="{!Account.industry}"/> 
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

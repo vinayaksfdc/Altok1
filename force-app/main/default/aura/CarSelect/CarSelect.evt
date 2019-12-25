@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Car Event">
+    <aura:attribute name="carId" type="String"/>
+</aura:event>

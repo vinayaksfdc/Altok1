@@ -1,0 +1,19 @@
+<aura:component controller="userinfoctrl" implements="forceCommunity:availableForAllPageTypes" access="global">
+<span class="crayon-i "> </span><span class="crayon-c">
+ <!-- init handler event call "doInit" function on component load and fetch current user information -->
+    </span> 
+ <aura:handler name="init" value="this" action="{!c.doInit}"/>
+  
+    <aura:attribute name="userInfo" type="user"/>  
+    
+    <b>Current User Information</b>
+    <p>Name : {!v.userInfo.Name}</p>
+    <p>FirstName : {!v.userInfo.FirstName}</p>
+    <p>FirstName : {!v.userInfo.FirstName}</p>
+    <p>LastName : {!v.userInfo.LastName}</p>
+    <p>Email : {!v.userInfo.Email}</p>
+    <p>Username : {!v.userInfo.Username}</p>
+    <p>IsActive : {!v.userInfo.IsActive}</p>
+    <p>TimeZoneSidKey : {!v.userInfo.TimeZoneSidKey}</p>
+    <p>Country : {!v.userInfo.Country}</p>
+</aura:component>

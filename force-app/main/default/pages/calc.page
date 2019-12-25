@@ -1,0 +1,68 @@
+<apex:page controller="calc" sidebar="false" id="page">
+    <style>
+        .box1
+        {
+        width:450px;
+        height:50px;
+        font-size: 100px;
+        border-style: solid;
+        border-radius: 8px;
+        }
+        .box{
+            width:450px;
+            height:50px;
+            font-size: 100px;
+            border-style: solid;
+            }
+        .box2{
+        width:450px;
+            height:50px;
+            font-size: 20px;
+        }
+         
+    </style>
+    <apex:form >
+        
+        
+        
+        <apex:pageBlock title="calculator"   >
+            <br/><br/>
+            
+            
+            <br/><br/><br/><br/>
+            <apex:inputText value="{!num}" styleClass="box2"/>
+            <br/><br/><br/><br/>
+            
+            
+            
+            <apex:panelGrid styleClass="box1" >
+                <apex:pageBlockSection id="pbs"> 
+                    <apex:pageBlockSection columns="4" >
+                        <apex:commandButton value="1" action="{!val1}"  />
+                        <apex:commandButton value="2" action="{!val2}"  />
+                        <apex:commandButton value="3" action="{!val3}" />
+                        <apex:commandButton value="+" action="{!add}"  />
+                        
+                         
+                        <apex:commandButton value="4" action="{!val4}" />
+                        <apex:commandButton value="5" action="{!val5}" />
+                        <apex:commandButton value="6" action="{!val6}" />
+                        <apex:commandButton value="-" action="{!sub}" />
+                        
+                        <apex:commandButton value="7" action="{!val7}" />
+                        <apex:commandButton value="8" action="{!val8}" />
+                        <apex:commandButton value="9" action="{!val9}" />
+                        <apex:commandButton value="*" action="{!mul}" />
+                        
+                         <apex:commandButton value="=" action="{!eqls}" />
+                        
+                        
+                    </apex:pageBlockSection>
+                </apex:pageBlockSection>	
+            </apex:panelGrid>  
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>

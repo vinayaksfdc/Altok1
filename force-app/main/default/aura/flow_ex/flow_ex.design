@@ -1,0 +1,7 @@
+<design:component>
+    <design:attribute name="scriptText" label="Script Text" 
+                      description="What the agent should say to the customer" />
+    <design:attribute name="action" label="Navigation Action" 
+                      description="" />
+        
+</design:component>

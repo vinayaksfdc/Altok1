@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="cars" type="Car__c[]" />
+    <lightning:card title="Find a Car" class="slds-m-bottom_10px">
+        <c:CarSearchForm />
+    </lightning:card>
+    <lightning:card title="Matching Car"  >
+        <!-- actions and body markup here -->
+            <c:CarSearchResults aura:id="CSRcmp"/>
+    </lightning:card>
+    <aura:handler name="formsubmit"
+                  event="c:FormSubmit"
+                  action="{!c.onFormSubmit}"
+                  phase="capture"/>
+
+</aura:component>

@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+ 
+    <lightning:tabset aura:id="tabSet" selectedTabId="one">
+        <lightning:tab label="Item One" id="one">
+         <div class="divStyle">
+  	  <h1> Welcome to Altokk University.</h1>
+             <c:userCntrl></c:userCntrl>
+               <c:Std_Acc></c:Std_Acc>
+      <p>This is sample HTML Paragraph in a DIV elelment.</p>  
+            
+   </div>
+        </lightning:tab>
+        <lightning:tab label="Item Two" id="two">
+          Sample Content Two
+            
+         <c:Std_Acc></c:Std_Acc>
+           
+        </lightning:tab>
+         <lightning:tab label="Item 3" id="3">
+          Sample Content 3
+           <c:Std_Con></c:Std_Con>
+             
+        </lightning:tab>
+         <lightning:tab label="Item 4" id="4">
+          Sample Content 4
+            <c:Std_Marks></c:Std_Marks>
+        </lightning:tab>
+         <lightning:tab label="Item 5" id="5">
+          Sample Content 5
+        </lightning:tab>
+         <lightning:tab label="Item 6" id="6">
+          Sample Content 6
+        </lightning:tab>
+         <lightning:tab label="Item 7" id="7">
+          Sample Content 7
+        </lightning:tab>
+    </lightning:tabset>
+ 
+</aura:component>

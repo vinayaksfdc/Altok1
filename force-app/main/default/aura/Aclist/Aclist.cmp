@@ -1,0 +1,8 @@
+<aura:component controller="Aclist" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="accs" type="account[]"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:iteration items="{!v.accs}" var="a">
+        {!a.Name}
+        
+    </aura:iteration> 
+</aura:component>

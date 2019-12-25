@@ -1,0 +1,28 @@
+<apex:page standardController="Account">
+    <script>
+    function callMe()
+    {
+        if(account.rating=='COLD')
+    	{
+        var bool=false;
+        }
+    }
+    </script>
+    
+    <apex:form >
+        
+        
+        
+        
+        <apex:pageBlock >
+            <apex:pageBlockSection title="{!Account.Name } Location">
+                <!-- Display the text version of the address -->
+                <apex:inputfield value="{!Account.name}"/><br/>
+                <apex:inputfield value="{!Account.phone}"/><br/>
+                <apex:inputfield value="{!Account.industry}"/><br/>
+                <apex:inputfield value="{!Account.rating}" rendered="false" /><br/>
+                <apex:commandButton value="save" action="{!save}"/> 
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page controller="WeatherDetails" lightningStylesheets="true">
+   
+    City: {!wc.location.name}<br/>
+    Current Condition: {!wc.Current.Condition.Text}<br/>
+    Temperature: {!wc.Current.temp_c} °C<br/>
+    Feels Like: {!wc.Current.feelslike_c} °C<br/>
+</apex:page>

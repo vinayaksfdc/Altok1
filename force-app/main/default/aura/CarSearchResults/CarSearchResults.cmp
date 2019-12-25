@@ -1,0 +1,31 @@
+<aura:component controller="AltokCarSearchResults" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <!--<aura:handler name="formSubmitEvent" event="c:FormSubmit" action="{!c.doSearch}"/>-->
+    <aura:attribute name="car" type="Car__c[]" />
+    <!-- set up the aura:method for search -->
+    <aura:attribute name="carTypeId1" type="String"/>
+    <aura:method name="search" access="global" action="{!c.search}" >
+        <aura:attribute name="formData" type="String"/>
+    </aura:method>
+    <aura:handler name="carSelect" event="c:CarSelect" action="{!c.oncarSelect}"/>
+    <aura:attribute name="selectedcarId" type="String" default="null"/>
+    
+    
+    <lightning:layout multipleRows="true" horizontalAlign="center">
+        
+        <aura:iteration items="{!v.car}" var="car">
+            <lightning:layoutItem flexibility="grow"  class="slds-m-right_small" >   
+                <c:CarTile car="{!car}" selected="{!car.Id == v.selectedcarId ? true : false}"/>
+            </lightning:layoutItem>
+        </aura:iteration>
+        
+        
+        <aura:if isTrue="{!v.car.length==0}">
+            <lightning:layoutItem class="slds-align_absolute-center" flexibility="auto" padding="around-small">   
+                <ui:outputText value="No car found" />
+            </lightning:layoutItem>
+        </aura:if>
+        
+    </lightning:layout>
+</aura:component>

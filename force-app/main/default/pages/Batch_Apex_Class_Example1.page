@@ -1,0 +1,12 @@
+<apex:page controller="Batch_Apex_Class_Example1">
+    <apex:form >
+		<apex:pageBlock >
+            {!listofcarswithoutservice}
+        </apex:pageBlock>
+        <apex:pageBlock >
+        	<apex:pageBlockTable value="{!listofcarswithoutservice}" var="a">
+              		<apex:column headerValue="carname" value="{!a.name}"/>    
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+   </apex:form>     
+</apex:page>

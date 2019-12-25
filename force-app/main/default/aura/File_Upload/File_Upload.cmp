@@ -1,0 +1,8 @@
+<aura:component controller="WeatherDetails" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ <!--
+     City: {!wc.location.name}<br/>
+    Current Condition: {!wc.Current.Condition.Text}<br/>
+    Temperature: {!wc.Current.temp_c} °C<br/>
+    Feels Like: {!wc.Current.feelslike_c} °C<br/>
+  -->
+</aura:component>

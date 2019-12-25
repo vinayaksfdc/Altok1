@@ -1,0 +1,24 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global" >
+    <!-- Get the script text from the flow -->    
+    <aura:attribute name="scriptText" type="String" required="true" />
+    <!-- Pass the value of the selected option back to the flow -->
+    <aura:attribute name="value" type="String" />
+    <aura:attribute name="action" type="String" />
+    <div class="script-container">
+        Navigation Action :   {!v.value}
+    </div>
+    <!-- Buttons for the agent to click, according to the customer’s response -->
+    <div class="slds-p-top_large slds-p-bottom_large">
+        <p><lightning:formattedText value="Customer Response" 
+                                    class="slds-text-body_small" /></p>
+        <lightning:buttongroup >
+            <lightning:button label="Previous" aura:id="previousId" 
+                              variant="neutral" onclick="{!c.handleChange}"/>
+            <lightning:button label="Next" aura:id="nextId" 
+                              variant="neutral" onclick="{!c.handleChange}"/>
+            <lightning:button label="Finish" aura:id="finishId" 
+                              variant="neutral" onclick="{!c.handleChange}"/>
+            
+        </lightning:buttongroup>
+    </div>
+</aura:component>

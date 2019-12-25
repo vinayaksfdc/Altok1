@@ -1,0 +1,19 @@
+<apex:page controller="HelloWorldClass">
+    
+    <apex:form id="ref">
+        <apex:pageBlock >
+        	<apex:commandButton value="res"  action="{!Calc}" reRender="ref"/>
+            <br/><br/>
+            String value is {!str}
+             <br/><br/>
+           inputExprn value is {!inputExprn}
+             <br/><br/>
+           result value is  {!result}
+             <br/><br/>
+           lst value is   {!lst}
+             <br/><br/>
+             
+            <br/><br/>
+        </apex:pageBlock>    
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,9 @@
+<aura:component >
+	<aura:attribute name="a1" type="integer" default="10"></aura:attribute>
+    	<aura:attribute name="b1" type="integer"  default="10"></aura:attribute>
+    	<aura:attribute name="c1" type="integer"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.click}"></aura:handler>
+    
+    {!v.c1}
+    
+</aura:component>

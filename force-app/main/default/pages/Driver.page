@@ -1,0 +1,25 @@
+<apex:page standardController="contact" lightningStylesheets="true">
+    <apex:form > 
+        <apex:pageblock Title="Driver">
+              <apex:pageBlockSection title="Driver Details" columns="2">
+                <apex:inputField value="{!contact.Driver_ID__c}"/> 
+                <apex:inputField value="{!contact.firstname}"/> 
+                <apex:inputField value="{!contact.lastname}"/>
+                <apex:inputField value="{!contact.birthdate}"/>
+                <apex:inputField value="{!contact.Driver_Availability__c}"/>
+                <apex:inputField value="{!contact.phone}"/>
+                <apex:inputField value="{!contact.Driving_License__c}"/>
+                <apex:inputField value="{!contact.ID_Proof__c}"/>
+                <apex:inputField value="{!contact.Insurance__c}"/>
+                <apex:inputField value="{!contact.Age__c}"/>
+                <apex:inputField value="{!contact.Date_of_Joining__c}"/>
+                <apex:inputField value="{!contact.Experience__c}"/>
+                 <apex:inputField value="{!contact.Rating__c}"/>
+               </apex:pageBlockSection>
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="cancel" action="{!Cancel}"/>
+             </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>     
+</apex:page>

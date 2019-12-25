@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+ <aura:attribute name="car" type="Car__c" />
+ <aura:registerEvent name="CarSelect" type="c:CarSelect"/>
+ <aura:registerEvent name="CarSelected" type="c:CarSelected" />
+
+ <aura:attribute name='selected' type='Boolean' default='false'/> 
+ <lightning:button class="{!v.selected ? 'tile selected' : 'tile'}"  onclick="{!c.oncarClick}">
+        <div style="{!'background-image:url(\'' + v.car.Image_url__c + '\'); '}" class="innertile">
+          <div class="lower-third">
+           <h1 class="slds-truncate">{!v.car.Reg_No__c}</h1>
+          </div>
+        </div>
+    </lightning:button>
+ </aura:component>

@@ -1,0 +1,62 @@
+<aura:component controller="CarSearchResults" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <lightning:layout horizontalAlign="center" verticalAlign="end" >
+        <lightning:layoutItem padding="horizontal-medium" class="slds-grid_vertical-align-center">
+            
+            <lightning:select value="{!v.picvalue.CarType_Values__c}" label="Pick List values" 
+                              aura:id="testing" onchange="{!c.handleCompanyOnChange}" class="slds-button slds-button_neutral" >       
+                <option value="choose">Choose one...</option> 
+                <aura:iteration items="{!v.picvalue}" var="s">
+                    <option value="{!s}">{!s}</option>
+                </aura:iteration> 
+            </lightning:select> 
+        </lightning:layoutItem>
+        <lightning:layoutItem class="slds-grid_vertical-align-center" padding="horizontal-medium" >
+            <lightning:button class="slds-button" variant="brand" label="Search" onclick="{!c.echo}"/>
+            <aura:if isTrue="{!v.renderNew}">
+                <lightning:button class="slds-button" variant="neutral" label="New" onclick="{! c.handleClick }" />
+            </aura:if>
+        </lightning:layoutItem> 
+    </lightning:layout>
+    <aura:attribute name="aname" type="Car__c" default="{'sObjectType':'car__c'}"/>
+    <aura:attribute name="picvalue" type="List" />
+    
+    <aura:attribute name="ListOfcars" type="Car__c[]"/>
+    
+    
+    <aura:attribute name="carid" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    
+    
+    
+    <ui:outputText value="{!v.carTypeId}" />    
+    
+    
+    <aura:iteration items="{!v.ListOfcars}" var="acc">
+        <div class=".slds-size--1-of-4">
+            <lightning:card>
+                <li type="dice">Car Name : {!acc.Name}</li>
+                
+                <lightning:button class="{!v.selected ? 'tile selected' : 'tile'}" name="{!acc.Id}" onclick="{!c.oncarClick}">
+                    <div style="{!'background-image:url(\'' + acc.Image_url__c + '\'); '}" class="innertile">
+                        <div class="lower-third">
+                            <h1 class="slds-truncate">{!v.car.Reg_No__c}</h1>
+                        </div>
+                    </div>
+                </lightning:button>
+                <ul>
+                    
+                    <li>  {!acc.CarType_Values__c}</li>
+                    
+                </ul>
+                <hr/>
+            </lightning:card>
+        </div>
+    </aura:iteration>
+    <!-- event creation to pass data to -->
+     <aura:attribute name="car" type="Car__c" />
+ 	 <aura:registerEvent name="CarSelected" type="c:CarSelectedEvent" />
+    
+</aura:component>

@@ -1,0 +1,29 @@
+<aura:component controller="DisplayAcc">
+    <aura:attribute name="acc" type="Account"> </aura:attribute>
+    <aura:attribute name="con" type="Contact[]"> </aura:attribute>
+    <aura:attribute name="firstName" type="String" default="test admin"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"></aura:handler> 
+    <lightning:card title="Account Info">  
+        <article>
+            <div class=".slds-card">
+                <header>
+                    <h1>Account Details</h1>
+                </header>
+            </div>
+        </article> 
+        <div class=".slds-card__body">
+            <li>{!v.acc.Id}</li>	<li>{!v.acc.Name}</li><li>{!v.acc.Phone}</li>
+        </div>     
+    </lightning:card>
+     <lightning:card title="Contact Info"> 
+    <aura:iteration items="{!v.acc.Contacts}" var="con">
+        <article class="slds-card">
+            <li> {!con.Name}</li>
+            <li> {!con.Email}</li>
+            <li> {!con.Phone}</li>
+            <li> {!con.RecordType.Name}</li>
+   
+        </article>
+    </aura:iteration>
+             </lightning:card>
+</aura:component>

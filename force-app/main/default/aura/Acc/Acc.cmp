@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="Acc">
+    {!v.recordId} 
+    <!-- Handler to call function when page is loaded initially -->
+    <aura:handler name="init" action="{!c.fetchContacts}" value="{!this}" />
+    
+    <aura:attribute name="acc" type="Account" />
+    	{!v.acc.id}
+        <lightning:card title="Account Details">
+                {!v.acc.id}
+            {!v.acc.name}
+            <aura:iteration items="{!v.acc}" var="Account">
+                <!-- recordViewForm to view the record -->
+                <lightning:recordViewForm recordId="{!v.acc.id}" objectApiName="Account">
+                    <div class="slds-box slds-theme_default">
+                          <lightning:outputField fieldName="Name" />
+                        <lightning:outputField fieldName="Email" />
+                        <lightning:outputField fieldName="Phone" />
+                    </div>
+                </lightning:recordViewForm>
+               
+            </aura:iteration>
+       
+        
+    </lightning:card>
+ 
+</aura:component>

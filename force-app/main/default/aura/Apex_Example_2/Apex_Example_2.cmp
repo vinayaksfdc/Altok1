@@ -1,0 +1,12 @@
+<aura:component controller="Apex_Example_2">
+    <aura:attribute name="empname" type="String" />
+    <div class="block">
+        <lightning:input aura:id="lname" label="City" />
+        <lightning:input aura:id="fname" label="Condition" />
+        <br/>
+        <ui:outputText value="{!v.empName}" />
+        <br/>
+        <lightning:button label="Submit" onclick="{!c.invoke}" />
+        <lightning:buttonIcon iconName="utility:call" alternativeText="example" />
+    </div>
+</aura:component>

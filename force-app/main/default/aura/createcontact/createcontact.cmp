@@ -1,0 +1,15 @@
+<aura:component controller="createcontact">
+  <aura:attribute name="contObj" type="Contact"  
+default="{'sobjectType':'Contact',
+         'FirstName':'',
+         'LastName':'',
+         'Phone':'',
+         }"/>
+	<aura:attribute name="contactid" type="String"></aura:attribute>
+    
+     <lightning:input name="v.contObj.FirstName" label="Enter some text" />
+     <lightning:input name="v.contObj.LastName" label="Enter some text" />
+     <lightning:input name="v.contObj.Phone" label="Enter some text" />
+    
+    <lightning:button label="Search" onclick="{!c.doSomething}"/>
+</aura:component>

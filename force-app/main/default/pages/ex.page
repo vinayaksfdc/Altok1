@@ -1,0 +1,7 @@
+<apex:page controller="ex">
+    <apex:form >
+        <apex:inputText value="{!name}"   />
+        <apex:commandButton value="submit" action="{!submit}" />
+        {!name}
+    </apex:form>
+</apex:page>

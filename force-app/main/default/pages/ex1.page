@@ -1,0 +1,21 @@
+<apex:page controller="ex1" >
+    <apex:form >
+    	<apex:pageBlock >
+          name  <apex:inputText value="{!Wname}"  /> <br/><br/><br/><br/>
+<!--          lastname   <apex:inputText value="{!lastname}" /> <br/><br/><br/><br/>
+            <br/>   -->
+            <br/>
+            <br/>
+           
+           name is: {!Wname}
+            <br/>
+            <br/>
+             result is: {!res}
+            <apex:commandButton value="click" action="{!execute}"/>  
+			    <apex:pageBlockTable value="{!res}" var="a">
+            		<apex:column value="{!a.name}"/>
+            </apex:pageBlockTable>        
+        </apex:pageBlock>    
+    </apex:form>
+   
+</apex:page>

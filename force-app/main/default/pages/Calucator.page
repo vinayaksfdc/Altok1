@@ -1,0 +1,18 @@
+<apex:page controller="Calucator">
+    <apex:form >
+      <apex:pageBlock title="Calculator">
+             <apex:inputText value="{!value1}"/>
+             <apex:inputText value="{!value2}"/>
+             <apex:selectList value="{!selectedvalue1}" size="1" >
+                  <apex:selectOptions value="{!Allvalues}"/>
+                  <apex:actionSupport event="onchange" 
+                      action="{!callMethodinController}"/>
+                </apex:selectList>  <br/><br/>
+              YOUR OUTPUT VALUE IS: 
+             <apex:outputText >{!outputvalue}</apex:outputText>
+          
+          <br/><br/><br/><br/> value 1 is {!value1}  &nbsp;&nbsp;&nbsp; value 2 is {!value2}&nbsp;&nbsp;&nbsp;
+          <br/><br/>
+      </apex:pageBlock>
+    </apex:form>
+</apex:page>

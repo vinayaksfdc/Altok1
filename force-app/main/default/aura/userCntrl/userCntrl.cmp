@@ -1,0 +1,79 @@
+<aura:component controller="userCntrl" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	   
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>  
+   
+    <aura:attribute name="userInfo" type="user"/>
+     Getting the name of user "team knights"
+    nme in Shw1 is   helloo:   &nbsp;&nbsp;&nbsp;  {!v.userInfo.Name}   
+    
+    <br/><br/>
+  <lightning:input aura:id="body"
+                       label=""
+                       name="Body"
+                       placeholder="Enter message..."
+                       value="{!v.userInfo.Name}"
+                       onchange="{!c.itemsChange}"/>  
+    
+    <aura:handler name="change" value="{!v.userInfo.Name}" action="{!c.itemsChange}"/> 
+
+  
+              
+    <br/><br/><br/>
+    
+   <aura:attribute name="id_of_cont" type="String"/> 
+  <!--  <br/><br/><br/> Accountid from HElloNameAuraCmp:: &nbsp;&nbsp;&nbsp; {!v.id_of_cont} 
+-->
+    <!-- Handle the aura:valueChange event 
+ <aura:handler name="change" value="{!v.userInfo.Name}" action="{!c.handleValueChange}"/>
+-->
+   
+    
+    <br/><br/><br/>
+    
+    
+     
+    <aura:registerEvent name="firstCall" type="c:firstEvent"/> 
+    <!--	{!v.name} -->
+   <!-- <ui:button label="fireComponent" press="{!c.fireComponentEvent}" /> -->
+   {!v.id_of_cont}
+    <aura:handler name="change" value="{!v.id_of_cont}" action="{!c.fireComponentEvent}"/> 
+    
+      <!--  
+    nme in Shw1 is   helloo:     {!v.nme}     -->
+  
+   <!--  
+<aura:handler name="change" value="{!v.userName.Name}" action="{!c.show1}"/> 
+     <aura:handler name="change" value="{!v.userName.Name}" action="{!c.show1}"/>
+   <aura:handler name="change" value="{!v.userName.Name}" action="{!c.show1}"/>
+ <aura:attribute name="filterName" type="String" default="team knights"/>+<aura:registerEvent name="formsubmit" type="c:FormSubmit"/>
+     <lightning:button label="Call server" onclick="{!c.echo}"/>     -->
+    
+  
+    <!--   <p>    Name : <ui:outputText value="{!v.id_of_cont}" onchange="{!c.handleChange}"/>     </p>
+  Account Id 0012v00002R07g4AAB 
+Name  <lightning:input aura:id="body"
+                       label=""
+                       name="Body"
+                       placeholder="Enter message..."
+                       value="{!v.id_of_cont}"
+                       onchange="{!c.show}"/>
+    --> 
+      
+    
+ <!--    <aura:attribute name="parentAttribute" type="String"/> 
+			<c:childComponent childAttribute="{!v.parentAttribute}"/>
+<ui:inputText value="{!v.val}"  keyup="{!c.onKeyUp}" />
+
+<div onkeyup={handleKeyUp}>
+        <lightning-input
+            name="enter-search"
+            label="Search when user hits the 'enter' key"
+            type="search"
+        ></lightning-input>
+    </div>
+<ui:inputText aura:id=”searchInput” label=”Search” keyup=”{!c.performSearch}”/>
+
+		    --> 
+ 
+ 
+</aura:component>

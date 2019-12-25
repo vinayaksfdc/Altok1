@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<lightning:tabset>
+        <lightning:tab label="Data Table View">
+            Add data table code here
+        </lightning:tab>
+        <lightning:tab label="Cards View">
+            Add Card View Component here
+        </lightning:tab>
+        <lightning:tab label="Record Paging View">
+            Add Record Paging Component here
+        </lightning:tab>
+   </lightning:tabset>
+</aura:component>

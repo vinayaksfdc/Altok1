@@ -1,0 +1,56 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    <aura:attribute name="saved" type="Boolean" default="false" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner />
+    </aura:if>
+    <aura:if isTrue="{!!v.saved}">
+        <lightning:recordEditForm
+                                  onload="{!c.handleLoad}"
+                                  onsubmit="{!c.handleSubmit}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  recordId="0012v00002Jtid7AAB"
+                                  objectApiName="Account">
+            <!-- the messages component is for error messages -->
+            <lightning:messages />
+            
+            <lightning:inputField fieldName="Name" />
+            <lightning:inputField fieldName="Active__c" />
+            <lightning:inputField fieldName="AnnualRevenue" />
+            <lightning:inputField fieldName="Industry" />
+            <lightning:inputField fieldName="Phone" />
+            <lightning:inputField fieldName="Type" />
+            
+            <div class="slds-m-top_medium">
+                <lightning:button disabled="{!v.disabled}" variant="brand" type="submit" name="save" label="Save" />
+            </div>
+        </lightning:recordEditForm>
+        <aura:set attribute="else">
+            
+            
+            <lightning:recordViewForm recordId="0012v00002Jtid7AAB" objectApiName="Account">
+                <div class="slds-box">
+                    <lightning:outputfield fieldName="Name" />
+                    <lightning:outputfield fieldName="Active__c" />
+                    <lightning:outputfield fieldName="AnnualRevenue" />
+                    <lightning:outputfield fieldName="Industry" />
+                    <lightning:outputfield fieldName="Phone" />
+                    <lightning:outputfield fieldName="Type" />
+                </div>
+            </lightning:recordViewForm>
+            <p>Saved!</p>
+        </aura:set>
+    </aura:if>
+    
+    
+    
+    
+    
+    <!--	<lightning:recordForm
+        recordId="0012v00002Jtid7AAB"
+        objectApiName="Account"
+        layoutType="Compact"
+        columns="1"
+        mode="readonly" />  -->
+</aura:component>

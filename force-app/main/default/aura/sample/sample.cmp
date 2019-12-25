@@ -1,0 +1,15 @@
+<aura:component controller="accWithContController">
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   <aura:attribute name="ListOfAccount" type="Account[]" description="store accounts with there child contacts"/>
+   <ul>
+      <aura:iteration items="{!v.ListOfAccount}" var="acc">
+         <li type="dice">AccountName : {!acc.Name}</li>
+         <ul>
+            <aura:iteration items="{!acc.Contacts}" var="con" indexVar="index">
+               <li>contact {!index + 1} Name : {!con.LastName}</li>
+            </aura:iteration>
+         </ul>
+         <hr/>
+      </aura:iteration>
+   </ul>
+</aura:component>

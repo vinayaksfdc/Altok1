@@ -1,0 +1,46 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="car" type="Car__c[]" />
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    <lightning:card iconName="utility:anchor">
+          <aura:set attribute="title">
+            Car ID: {!v.car.Name}
+         </aura:set>
+
+        <aura:set attribute="Actions">
+            <aura:if isTrue='{!v.showButton}'>
+                <lightning:button label="Full Details" onclick="{!c.onFullDetails}" />
+            </aura:if>    
+        </aura:set>
+        
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="6" padding="around-small">
+                
+             <div class="slds-p-horizontal--small">
+                <div class="carproperty">
+                    <span class="label">Car ID: </span>
+                    <span>{!v.car.Name}</span>
+                </div>
+                <div class="carproperty">
+                    <span class="label">Type:</span>
+                    <span>{!v.car.CarType_Values__c}</span>
+                </div>
+                 <div class="carproperty">
+                    <span class="label">Registration Number:</span>
+                    <span>{!v.car.Reg_No__c}</span>
+                </div>
+
+            </div>
+
+            </lightning:layoutItem>
+
+            <lightning:layoutItem size="6" padding="around-small">
+                
+                <lightning:button variant='neutral' label='Full Details' onclick='{!c.onFullDetails}'/>
+ 
+                 <div class="imageview" style="{!'background-image:url(\'' + v.car.Add_image__c + '\'); '}" />
+            </lightning:layoutItem>
+            
+        </lightning:layout>
+        
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,19 @@
+.THIS H1 {
+    color: green;
+    font-size: 22px;
+}
+.divCss.THIS {
+    padding: 20px;
+    background-color: yellow;
+}
+.THIS H1 {
+    color: green;
+    font-size: 22px;
+}
+ 
+/* For select ALL Nested level <p> element */
+ 
+.THIS p {
+    color: red;
+    font-weight: lighter;
+}

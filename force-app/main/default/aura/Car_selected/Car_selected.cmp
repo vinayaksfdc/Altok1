@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	 
+    <aura:attribute name="car" type="Car__c" />
+    
+     {!v.carid}
+    
+        <force:recordData aura:id="service"
+                      layoutType="FULL"
+                      recordId="{!v.id}"
+                      fields="Id, Car_Type__c, picture__c, Name, Registration_Number__c"
+                      targetError="{!v.recordError}"
+                      targetFields="{!v.car}"
+                      mode="EDIT"
+                      />
+</aura:component>
